@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'meus_contratos';
+
+  realizaBusca(busca:string):void{
+
+    console.log(`realiza busca pelo valor ${busca}`);
+  }
 }

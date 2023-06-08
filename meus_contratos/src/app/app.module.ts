@@ -8,6 +8,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { ListaContratosComponent } from './lista-contratos/lista-contratos.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { ElaborarContratoComponent } from './elaborar-contrato/elaborar-contrato.component';
+import { VisualizaContratoComponent } from './visualiza-contrato/visualiza-contrato.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ElaborarContratoComponent } from './elaborar-contrato/elaborar-contrato
     MenuPrincipalComponent,
     ListaContratosComponent,
     RodapeComponent,
-    ElaborarContratoComponent
+    ElaborarContratoComponent,
+    VisualizaContratoComponent
   ],
   imports: [
     BrowserModule,
