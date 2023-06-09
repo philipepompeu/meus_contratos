@@ -9,6 +9,8 @@ import { ListaContratosComponent } from './lista-contratos/lista-contratos.compo
 import { RodapeComponent } from './rodape/rodape.component';
 import { ElaborarContratoComponent } from './elaborar-contrato/elaborar-contrato.component';
 import { VisualizaContratoComponent } from './visualiza-contrato/visualiza-contrato.component';
+import { FormularioContratoComponent } from './formulario-contrato/formulario-contrato.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { VisualizaContratoComponent } from './visualiza-contrato/visualiza-contr
     ListaContratosComponent,
     RodapeComponent,
     ElaborarContratoComponent,
-    VisualizaContratoComponent
+    VisualizaContratoComponent,
+    FormularioContratoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

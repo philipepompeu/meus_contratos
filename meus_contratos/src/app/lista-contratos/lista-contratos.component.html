@@ -9,6 +9,7 @@
 			<th scope="col">Valor</th>
 			<th scope="col">Saldo</th>
 			<th scope="col">Visualizar</th>
+			<th scope="col">Excluir</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,6 +22,7 @@
 			<td>{{ contrato.valor | number }}</td>
 			<td>{{ contrato.saldo | number }}</td>
       <td><a [routerLink]="['/visualizar', contrato.codigo]"><i class="bi bi-eye"></i></a></td>
+      <td><a [routerLink]="['/excluir', contrato.codigo]"><i class="bi bi-trash"></i></a></td>
 		</tr>
 	</tbody>
 </table>
