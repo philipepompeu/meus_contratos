@@ -15,22 +15,41 @@ export class ContratosService {
   static urlEndPoint = 'http://localhost:3000/contratos';
 
   constructor(private http: HttpClient) {
-    let lista = localStorage.getItem(STORAGE_ID);
 
+
+    /*ContratosService.contratosRepository.forEach(contrato => {
+      this.postContract(contrato).subscribe({
+        next: (valor)=>{
+
+        },
+        error: (e)=> console.log(e),
+        complete: ()=> console.log('requisicao finalizada')
+      });
+    });*/
+
+
+  }
+
+
+  private getListaFromLocalStorage():void{
+    let lista = localStorage.getItem(STORAGE_ID);
     if (lista != null) {
       ContratosService.contratosRepository = JSON.parse(lista);
     }
-
   }
 
+  getAllContracts():Observable<Contrato[]>{
 
-  getAllContracts():Contrato[]{
-    return ContratosService.contratosRepository;
+    return this.http.get<Contrato[]>(ContratosService.urlEndPoint)
+    //return ContratosService.contratosRepository;
   }
 
-  getContractById(id:string):Contrato|undefined{
+  getContractById(id:string):Observable<Contrato>{
 
-    return ContratosService.contratosRepository.find(e => e.codigo == id);
+
+
+    return this.http.get<Contrato>(`${ContratosService.urlEndPoint}/${id}`);
+    //return ContratosService.contratosRepository.find(e => e.codigo == id);
 
   }
 
@@ -40,7 +59,13 @@ export class ContratosService {
     localStorage.removeItem(STORAGE_ID);
     localStorage.setItem(STORAGE_ID,JSON.stringify(ContratosService.contratosRepository));
 
-    return this.http.post<Contrato>(ContratosService.urlEndPoint, umContrato);
+    return this.postContract(umContrato);
 
+  }
+
+
+  private postContract(umContrato: Contrato):Observable<Contrato>{
+
+    return this.http.post<Contrato>(ContratosService.urlEndPoint, umContrato);
   }
 }
