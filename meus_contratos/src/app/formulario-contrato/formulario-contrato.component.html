@@ -1,0 +1,59 @@
+<form action="" [formGroup]="contratoForm" *ngIf="contratoForm">
+
+  <div class="form-group">
+    <label for="codigo">Código:</label>
+    <input id="codigo"
+          type="text"
+          formControlName="codigo"
+          class="form-control"
+          [ngClass]="getClassByFormState('codigo')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('codigo')">
+      {{pegaMensagemDeErro('codigo')}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dataInicio">Inicio:</label>
+    <input id="dataInicio" type="text" formControlName="dataInicio" class="form-control" [ngClass]="getClassByFormState('dataInicio')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('dataInicio')">
+      {{pegaMensagemDeErro('dataInicio')}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="dataFinal">Fim:</label>
+    <input id="dataFinal" type="text" formControlName="dataFinal" class="form-control" [ngClass]="getClassByFormState('dataFinal')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('dataFinal')">
+      {{pegaMensagemDeErro('dataFinal')}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="cliente">Cliente:</label>
+    <input id="cliente" type="text" formControlName="cliente" class="form-control" [ngClass]="getClassByFormState('cliente')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('cliente')">
+      {{pegaMensagemDeErro('cliente')}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="valor">Valor:</label>
+    <input id="valor" type="number" formControlName="valor" class="form-control" [ngClass]="getClassByFormState('valor')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('valor')">
+      {{pegaMensagemDeErro('valor')}}
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="saldo">Saldo:</label>
+    <input id="saldo" type="number" formControlName="saldo" class="form-control" [ngClass]="getClassByFormState('saldo')">
+    <div class="invalid-feedback" *ngIf="exibeMensagemDeErro('saldo')">
+      {{pegaMensagemDeErro('saldo')}}
+    </div>
+  </div>
+
+  <button type="submit"
+      class="btn btn-primary"
+      (click)="onSubmit()"
+      [disabled]="!contratoForm.valid">Salvar</button>
+</form>
