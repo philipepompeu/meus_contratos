@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json:server":"json-server --watch src/assets/db.json --id 'codigo'",
-    "dev":"concurrently --kill-others \"npm run start\" \"npm run json:server\""
+    "json:server": "json-server --watch src/assets/db.json --id 'codigo'",
+    "dev": "concurrently --kill-others \"npm run start\" \"npm run json:server\""
   },
   "private": true,
   "dependencies": {
@@ -35,6 +35,7 @@
     "@angular/compiler-cli": "^15.0.0",
     "@angular/localize": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "angular-cli-ghpages": "^1.0.6",
     "concurrently": "^8.2.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
