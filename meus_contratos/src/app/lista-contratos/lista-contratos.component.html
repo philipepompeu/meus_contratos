@@ -19,8 +19,8 @@
 			<td>{{ contrato.dataInicio }}	</td>
 			<td>{{ contrato.dataFinal }}	</td>
 			<td>{{ contrato.cliente }}	</td>
-			<td>{{ contrato.valor | number }}</td>
-			<td>{{ contrato.saldo | number }}</td>
+			<td>{{ contrato.valor | currency }}</td>
+			<td>{{ contrato.saldo | currency }}</td>
       <td><a [routerLink]="['/visualizar', contrato.codigo]"><i class="bi bi-eye"></i></a></td>
       <td><a [routerLink]="['/excluir', contrato.codigo]"><i class="bi bi-trash"></i></a></td>
 		</tr>
