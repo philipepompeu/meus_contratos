@@ -1,0 +1,13 @@
+{
+  "contratos": [
+    {
+      "codigo": "XPTO00401",
+      "dataInicio": "01/01/2023",
+      "dataFinal": "01/01/2024",
+      "cliente": "Empresa ",
+      "valor": 999,
+      "saldo": 999,
+      "id": 1
+    }
+  ]
+}
