@@ -9,13 +9,24 @@ import { ContratosService } from '../contratos.service';
 })
 export class ListaContratosComponent implements OnInit{
 
-  contratos: Contrato[];
+  carregandoDados: Promise<boolean>;
+
+  contratos: Contrato[] = [];
   constructor(private contratosService: ContratosService){
 
   }
 
   ngOnInit(): void {
-    this.contratos = this.contratosService.getAllContracts();
+    this.contratosService.getAllContracts().subscribe(
+      {
+        next: (result) => {
+          this.contratos = [];
+          this.contratos.push(...result);
+          this.carregandoDados = Promise.resolve(true)
+        },
+        //complete:() => this.carregandoDados = Promise.resolve(true)
+      }
+    );
   }
 
 }
