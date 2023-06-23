@@ -55,9 +55,14 @@ export class FormularioContratoComponent implements OnInit {
 
       let novoContrato:Contrato = this.criaContrato();
 
-      console.log(novoContrato);
+      this.contratosService.saveNewContract(novoContrato)
+      .subscribe({
+        next: (valor)=>{
 
-      this.contratosService.saveNewContract(novoContrato);
+        },
+        error: (e)=> console.log(e),
+        complete: ()=> console.log('requisicao finalizada')
+      });
 
       this.router.navigate(['/']);
     }else{

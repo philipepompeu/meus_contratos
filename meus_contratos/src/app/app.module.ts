@@ -11,6 +11,7 @@ import { ElaborarContratoComponent } from './elaborar-contrato/elaborar-contrato
 import { VisualizaContratoComponent } from './visualiza-contrato/visualiza-contrato.component';
 import { FormularioContratoComponent } from './formulario-contrato/formulario-contrato.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
